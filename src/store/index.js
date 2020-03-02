@@ -5,9 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    test: 'virker!',
-    dato: Date.now(),
-    dato2: new Date()
+    home: true,
+    players: [],
+    challenges: [],
+    csChallenges: [],
+    loading: true
   },
   mutations: {
   },

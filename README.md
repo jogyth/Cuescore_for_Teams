@@ -1,5 +1,7 @@
-# my-vue-full
+# Navn
 En pakke med Vuex og VueRouter good to go. Bulma og Buefy er også standard. Og så Moment da. 
+
+API her --> https://api.cuescore.com/
 
 ## Project setup
 Last ned fra Github, endre navnet i package.json og kjør:
