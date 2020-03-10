@@ -11,7 +11,8 @@ import Challenges from './components/Challenges.vue'
 Vue.component("my-footer", Footer);
 Vue.component("my-challenges", Challenges);
 
-Vue.config.productionTip = true // Skru av for production!
+Vue.config.productionTip = true; // Skru av for production!
+Vue.config.devtools = true;
 
 // Middleware
 Vue.use(Buefy, { defaultIconPack: 'fas' });

@@ -25,9 +25,9 @@ export default {
   mounted (){    
     this.$store.state.loading = true;
     let promises = [];
-    //let otherPromises = [];
+    let otherPromises = [];
     let arr1 = [];
-    //let arr2 = [];
+    let arr2 = [];
 
     // Challenges
     for (var i = 0; i < this.challenges.length; i++) {
@@ -48,7 +48,7 @@ export default {
         });
 
     // Players
-/*     for (var y = 0; y < this.players.length; y++) {
+    for (var y = 0; y < this.players.length; y++) {
       otherPromises.push(
         axios
           .get('https://api.cuescore.com/participant/?id=' + this.players[y])
@@ -62,7 +62,7 @@ export default {
     Promise.all(otherPromises)
       .then(() => {
         this.$store.state.csPlayers = arr2;
-      }); */
+      });
       
   }
 }
