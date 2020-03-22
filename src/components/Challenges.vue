@@ -34,7 +34,7 @@
           <img src="../assets/images/cue.png" style="margin-top:50px;width:70%;" />
         </div>
       </div>
-        <div class="column is-one-third">
+        <div class="column is-one-third is-hidden-mobile">
           <h2 class="title is-size-6">
             Oppdater
           </h2>         

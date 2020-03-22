@@ -4,7 +4,7 @@
         <p>Rankingen er basert på <a href="http://www.biljardforbundet.no/2020/03/norgesrating/" target="_blank">Norges Biljardforbunds rankingsystem</a>. Spillere kommer i utgangspunktet inn i rankingen med en startverdi på 1150, men det er skjønnsmessig delt ut 1 ekstra poeng til de antatt beste spillerne slik at vi har en relevant seeding fra start. <br>Se kolonnen til høyre på siden for mer info om poenggivning.</p>
         <hr>
         <div class="columns">
-            <div class="column is-one-third">
+            <div class="column is-one-third is-full-mobile">
               <h2 class="title is-size-4" style="margin-left:5%">Rankingtabell</h2>
                 <div v-if="loaded">
                     <table class="table is-bordered is-hoverable" style="margin-left:5%;">
@@ -29,7 +29,7 @@
               </div>                              
 
             </div>
-            <div class="column is-two-thirds">
+            <div class="column is-two-thirds is-full-mobile">
               <h2 class="title is-size-4">Poengberegning</h2>
               <p class="pe"><strong>Poengdifferanse:</strong> Forskjellen i poengsum mellom to utøvere som møtes, basert på siste oppdaterte rating.</p>
               <p class="pe"><strong>Uventet resultat:</strong> Seier over spiller med mer poeng, eller tap for spiller med mindre poeng.</p>
