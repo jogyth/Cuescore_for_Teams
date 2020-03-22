@@ -5,6 +5,11 @@
     <hr>
     <div class="columns">
       <div class="column is-two-thirds">
+<!--         <div v-if="!loaded">
+          <p>Loading></p>
+        </div> -->
+        <b-loading :is-full-page="true" :active.sync="!this.loaded" :can-cancel="true"></b-loading>
+
         <div v-if="loaded">
           <table class="table is-bordered is-hoverable">
               <thead>
