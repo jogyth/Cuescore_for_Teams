@@ -4,113 +4,115 @@
         <p>Rankingen er basert på <a href="http://www.biljardforbundet.no/2020/03/norgesrating/" target="_blank">Norges Biljardforbunds rankingsystem</a>. Spillere kommer i utgangspunktet inn i rankingen med en startverdi på 1150, men det er skjønnsmessig delt ut 1 ekstra poeng til de antatt beste spillerne slik at vi har en relevant seeding fra start. <br>Se kolonnen til høyre på siden for mer info om poenggivning.</p>
         <hr>
         <div class="columns">
-            <div class="column is-one-third is-full-mobile">
-              <h2 class="title is-size-4" style="margin-left:5%">Rankingtabell</h2>
-                <div v-if="loaded">
-                    <table class="table is-bordered is-hoverable" style="margin-left:5%;">
-                        <tr>
-                          <th class="is-warning">#</th>
-                          <th class="is-warning">Poeng</th>
-                          <th class="is-warning">Seed</th>
-                          <th class="is-warning">Bilde</th>
-                          <th class="is-warning">Navn</th>
-                         </tr> 
-                        <tr v-for="(item, index) in this.rankedSpellere" :key="index">
-                          <td><span class="has-text-weight-bold is-size-4">{{ item.rank }}</span></td>
-                          <td align="center">{{ item.ranking }}</td>
-                          <td align="center">{{ item.seed }}</td>
-                          <td><img :src="item.image" width="60px"></td>
-                          <td><a :href="item.url">{{item.name}}</a></td>
-                        </tr>                 
-                    </table>
-                </div>  
-              <div class="image">
-                <img src="../assets/images/cue.png" style="margin-top:50px;width:70%;" />
-              </div>                              
-
+          <div class="column is-one-third is-full-mobile">
+            <h2 class="title is-size-4" style="margin-left:5%">Rankingtabell</h2>
+              <div v-if="loaded">
+                <div class="table-container">
+                  <table class="table is-bordered is-hoverable" style="margin-left:5%;">
+                      <tr>
+                        <th class="is-warning">#</th>
+                        <th class="is-warning">Poeng</th>
+                        <th class="is-warning">Seed</th>
+                        <th class="is-warning">Bilde</th>
+                        <th class="is-warning">Navn</th>
+                        </tr> 
+                      <tr v-for="(item, index) in this.rankedSpellere" :key="index">
+                        <td><span class="has-text-weight-bold is-size-4">{{ item.rank }}</span></td>
+                        <td align="center">{{ item.ranking }}</td>
+                        <td align="center">{{ item.seed }}</td>
+                        <td><img :src="item.image" width="60px"></td>
+                        <td><a :href="item.url">{{item.name}}</a></td>
+                      </tr>                 
+                  </table>
+                </div>
+              </div>  
             </div>
             <div class="column is-two-thirds is-full-mobile">
               <h2 class="title is-size-4">Poengberegning</h2>
               <p class="pe"><strong>Poengdifferanse:</strong> Forskjellen i poengsum mellom to utøvere som møtes, basert på siste oppdaterte rating.</p>
               <p class="pe"><strong>Uventet resultat:</strong> Seier over spiller med mer poeng, eller tap for spiller med mindre poeng.</p>
               <p class="pe"><strong>Forventet resultat:</strong> Seier over spiller med mindre poeng, eller tap for spiller med mer poeng.</p>
-              <table class="table is-bordered senter">
-                <tr>
-                  <th rowspan="2" class="is-warning"> Poengdifferanse</th>
-                  <th colspan="2" class="is-warning">Uventet resultat</th>
-                  <th colspan="2" class="is-warning">Forventet resultat</th>
-                </tr>
-                <tr>
-                  <th class="is-success" align="center">Seier</th>
-                  <th class="is-success" align="center">Tap</th>
-                  <th class="is-success" align="center">Seier</th>
-                  <th class="is-success" align="center">Tap</th>
-                </tr>
-                <tr>
-                  <td align="center">0</td>
-                  <td align="center"></td>
-                  <td align="center"></td>
-                  <td align="center">8</td>
-                  <td align="center">-7</td>
-                </tr>
-                <tr>
-                  <td align="center">1-49</td>
-                  <td align="center">8</td>
-                  <td align="center">-8</td>
-                  <td align="center">8</td>
-                  <td align="center">-6</td>
-                </tr>
-                <tr>
-                  <td align="center">50-99</td>
-                  <td align="center">10</td>
-                  <td align="center">-10</td>
-                  <td align="center">7</td>
-                  <td align="center">-5</td>
-                </tr>   
-                <tr>
-                  <td align="center">100-149</td>
-                  <td align="center">12</td>
-                  <td align="center">-12</td>
-                  <td align="center">6</td>
-                  <td align="center">-4</td>
-                </tr>   
-                <tr>
-                  <td align="center">150-199</td>
-                  <td align="center">14</td>
-                  <td align="center">-14</td>
-                  <td align="center">5</td>
-                  <td align="center">-3</td>
-                </tr>   
-                <tr>
-                  <td align="center">200-299</td>
-                  <td align="center">16</td>
-                  <td align="center">-16</td>
-                  <td align="center">4</td>
-                  <td align="center">-2</td>
-                </tr>   
-                <tr>
-                  <td align="center">300-399</td>
-                  <td align="center">18</td>
-                  <td align="center">-18</td>
-                  <td align="center">3</td>
-                  <td align="center">-2</td>
-                </tr>   
-                <tr>
-                  <td align="center">400-599</td>
-                  <td align="center">20</td>
-                  <td align="center">-20</td>
-                  <td align="center">2</td>
-                  <td align="center">-1</td>
-                </tr>   
-                <tr>
-                  <td align="center">600 +</td>
-                  <td align="center">25</td>
-                  <td align="center">-25</td>
-                  <td align="center">1</td>
-                  <td align="center">-1</td>
-                </tr>                                                                                              
-              </table>              
-            
+              <div class="table-container">
+                <table class="table is-bordered is-hoverable">
+                  <tr>
+                    <th rowspan="2" class="is-warning"> Poengdifferanse</th>
+                    <th colspan="2" class="is-warning">Uventet resultat</th>
+                    <th colspan="2" class="is-warning">Forventet resultat</th>
+                  </tr>
+                  <tr>
+                    <th class="is-success" align="center">Seier</th>
+                    <th class="is-success" align="center">Tap</th>
+                    <th class="is-success" align="center">Seier</th>
+                    <th class="is-success" align="center">Tap</th>
+                  </tr>
+                  <tr>
+                    <td align="center">0</td>
+                    <td align="center"></td>
+                    <td align="center"></td>
+                    <td align="center">8</td>
+                    <td align="center">-7</td>
+                  </tr>
+                  <tr>
+                    <td align="center">1-49</td>
+                    <td align="center">8</td>
+                    <td align="center">-8</td>
+                    <td align="center">8</td>
+                    <td align="center">-6</td>
+                  </tr>
+                  <tr>
+                    <td align="center">50-99</td>
+                    <td align="center">10</td>
+                    <td align="center">-10</td>
+                    <td align="center">7</td>
+                    <td align="center">-5</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">100-149</td>
+                    <td align="center">12</td>
+                    <td align="center">-12</td>
+                    <td align="center">6</td>
+                    <td align="center">-4</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">150-199</td>
+                    <td align="center">14</td>
+                    <td align="center">-14</td>
+                    <td align="center">5</td>
+                    <td align="center">-3</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">200-299</td>
+                    <td align="center">16</td>
+                    <td align="center">-16</td>
+                    <td align="center">4</td>
+                    <td align="center">-2</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">300-399</td>
+                    <td align="center">18</td>
+                    <td align="center">-18</td>
+                    <td align="center">3</td>
+                    <td align="center">-2</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">400-599</td>
+                    <td align="center">20</td>
+                    <td align="center">-20</td>
+                    <td align="center">2</td>
+                    <td align="center">-1</td>
+                  </tr>   
+                  <tr>
+                    <td align="center">600 +</td>
+                    <td align="center">25</td>
+                    <td align="center">-25</td>
+                    <td align="center">1</td>
+                    <td align="center">-1</td>
+                  </tr>                                                          
+                </table> 
+              </div>             
+              <div class="image">
+                <img src="../assets/images/cue.png" style="margin-top:50px;width:700px;transform: rotate(185deg);" />
+              </div>                                          
             </div>
         </div>
     </div>

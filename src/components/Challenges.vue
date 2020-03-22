@@ -11,31 +11,34 @@
         <b-loading :is-full-page="true" :active.sync="!this.loaded" :can-cancel="true"></b-loading>
 
         <div v-if="loaded">
-          <table class="table is-bordered is-hoverable is-narrow-mobile">
-              <thead>
-                  <th class="is-warning">Tid</th>
-                  <th class="is-warning">Disiplin</th>
-                  <th class="is-warning">Challenge</th>
-                  <th class="is-warning">Først til</th>
-                  <th class="is-warning">Resultat</th>   
-                  <th class="is-warning">Lenke</th>             
-              </thead>
-              <tr v-for="(item, index) in this.$store.state.csChallenges"  :key="index">                
-                  <td><small>{{ moment(item.starttime).format('DoMM - H:mm') }}</small></td>
-                  <td>{{ item.disciplineName }}</td>
-                  <td><a v-bind:href="item.match.playerA.url" target="_blank">{{ item.match.playerA.name }}</a> - <a v-bind:href="item.match.playerB.url" target="_blank">{{ item.match.playerB.name }}</a> </td>
-                  <td align="center">{{ item.match.raceTo }}</td>
-                  <td align="center">{{ item.match.scoreA }} - {{ item.match.scoreB }}</td>     
-                  <td><a v-bind:href="item.url" target="_blank">Detaljer</a></td>
-              </tr>
-          </table>
+          <h2 class="title is-size-4">2020</h2>
+          <div class="table-container">
+            <table class="table is-bordered is-hoverable is-narrow-mobile is-large">
+                <thead>
+                    <th class="is-warning">Tid</th>
+                    <th class="is-warning">Disiplin</th>
+                    <th class="is-warning">Challenge</th>
+                    <th class="is-warning">Først til</th>
+                    <th class="is-warning">Resultat</th>   
+                    <th class="is-warning">Lenke</th>             
+                </thead>
+                <tr v-for="(item, index) in this.$store.state.csChallenges"  :key="index">                
+                    <td><small>{{ moment(item.starttime).format('DoMM - H:mm') }}</small></td>
+                    <td>{{ item.disciplineName }}</td>
+                    <td><a v-bind:href="item.match.playerA.url" target="_blank">{{ item.match.playerA.name }}</a> - <a v-bind:href="item.match.playerB.url" target="_blank">{{ item.match.playerB.name }}</a> </td>
+                    <td align="center">{{ item.match.raceTo }}</td>
+                    <td align="center">{{ item.match.scoreA }} - {{ item.match.scoreB }}</td>     
+                    <td><a v-bind:href="item.url" target="_blank">Detaljer</a></td>
+                </tr>
+            </table>
+          </div>
         </div>
         <div class="image">
-          <img src="../assets/images/cue.png" style="margin-top:50px;width:70%;" />
+          <img src="../assets/images/cue.png" style="margin-top:50px;width:420px;" />
         </div>
       </div>
         <div class="column is-one-third is-full-mobile">
-          <h2 class="title is-size-6">
+          <h2 class="title is-size-4">
             Oppdater
           </h2>         
           <input 
@@ -52,7 +55,7 @@
             >Legg til en challenge
           </b-button>
           <br/><br/>          
-          <div class="box" style="width:400px;">
+          <div class="box" style="width:285px;">
             <img src="../assets/images/screenshot.gif" />
             <p class="is-size-7">Challenge ID'en finner du i CueScore. Gå inn på selve matchen og så klipper du ut de tallene som står i URL'en (nettadressen) - og limer dem inn her.</p>
           </div>
