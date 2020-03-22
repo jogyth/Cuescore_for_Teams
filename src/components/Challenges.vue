@@ -4,14 +4,14 @@
     <p class="is-size-5">Oversikt over "challenges" spilt av klubbmedlemmer og registrert på denne siden - nyeste øverst. Challenges må manuelt registreres her. Summen av challenges danner grunnlag for rankingen. </p>
     <hr>
     <div class="columns">
-      <div class="column is-two-thirds">
+      <div class="column is-two-thirds is-full-mobile">
 <!--         <div v-if="!loaded">
           <p>Loading></p>
         </div> -->
         <b-loading :is-full-page="true" :active.sync="!this.loaded" :can-cancel="true"></b-loading>
 
         <div v-if="loaded">
-          <table class="table is-bordered is-hoverable">
+          <table class="table is-bordered is-hoverable is-narrow-mobile">
               <thead>
                   <th class="is-warning">Tid</th>
                   <th class="is-warning">Disiplin</th>
@@ -21,7 +21,7 @@
                   <th class="is-warning">Lenke</th>             
               </thead>
               <tr v-for="(item, index) in this.$store.state.csChallenges"  :key="index">                
-                  <td><small>{{ moment(item.starttime).format('LLL') }}</small></td>
+                  <td><small>{{ moment(item.starttime).format('DoMM - H:mm') }}</small></td>
                   <td>{{ item.disciplineName }}</td>
                   <td><a v-bind:href="item.match.playerA.url" target="_blank">{{ item.match.playerA.name }}</a> - <a v-bind:href="item.match.playerB.url" target="_blank">{{ item.match.playerB.name }}</a> </td>
                   <td align="center">{{ item.match.raceTo }}</td>
@@ -34,7 +34,7 @@
           <img src="../assets/images/cue.png" style="margin-top:50px;width:70%;" />
         </div>
       </div>
-        <div class="column is-one-third is-hidden-mobile">
+        <div class="column is-one-third is-full-mobile">
           <h2 class="title is-size-6">
             Oppdater
           </h2>         
