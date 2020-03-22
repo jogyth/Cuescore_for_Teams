@@ -6,9 +6,12 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     home: true,
+    ranking: false,
+    tournaments: false,
     players: [],
     challenges: [],
     csChallenges: [],
+    csPlayers: [],
     loading: true
   },
   mutations: {
