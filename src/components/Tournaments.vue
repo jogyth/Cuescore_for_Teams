@@ -1,7 +1,7 @@
     <template>
     <div class="section">
         <h1 class="title">Turneringer</h1>    
-        <p>Oversikt over alle turneringer spilt i klubben. Her registreres også matcher etterhvert som de spilles. Alle turneringsmatcher registreres i CueScore på vanlig måte og registreres både på siden "Challenges" og på denne siden.</p>
+        <p>Oversikt over alle turneringer spilt i klubben. Her registreres også matcher etterhvert som de spilles. Alle turneringsmatcher registreres i CueScore på vanlig måte og registreres på denne siden. Rankingen får med seg disse matchene. </p>
         <hr>
         <div class="columns">
             <div class="column is-four-fifths is-full-mobile">
