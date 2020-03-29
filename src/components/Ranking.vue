@@ -17,7 +17,7 @@
                         <th class="is-warning">Navn</th>
                         </tr> 
                       <tr v-for="(item, index) in this.rankedSpellere" :key="index">
-                        <td><span class="has-text-weight-bold is-size-4">{{ item.rank }}</span></td>
+                        <td><span class="has-text-weight-bold is-size-5">{{ item.rank }}</span></td>
                         <td align="center">{{ item.ranking }}</td>
                         <td align="center">{{ item.seed }}</td>
                         <td><img :src="item.image" width="60px"></td>
@@ -291,8 +291,7 @@ export default {
       }
       setTimeout(this.sorterSpellere(), 1000);
     },
-    enterRanking(spiller, verdi){
-      // Funker ikke fordi du ikke kan loope igjennom et objekt.       
+    enterRanking(spiller, verdi){    
       var i = 0;
       while(i < this.spellere.length) {
         if (this.spellere[i].playerId === spiller) {

@@ -38,7 +38,7 @@
         </div>
       </div>
         <div class="column is-one-third is-full-mobile">
-          <h2 class="title is-size-4">
+          <h2 class="title is-size-4" style="margin-left:75px;">
             Oppdater
           </h2>         
           <input 
@@ -46,12 +46,13 @@
             class="input" 
             placeholder="Challenge ID"
             v-model="newChallenge"
-            style="width:173px;margin-bottom:5px;"
+            style="width:173px;margin-bottom:5px;margin-left:50px;"
           >
           <br/>
           <b-button 
             type="is-success"             
             @click="addChallenge()"
+            style="margin-left: 50px;"
             >Legg til en challenge
           </b-button>
           <br/><br/>          
